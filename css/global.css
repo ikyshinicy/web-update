@@ -1,8 +1,11 @@
 /* ============================================================
-   RANZAI — GLOBAL CSS
-   Single file. Load on every page:
-   <link rel="stylesheet" href="/css/global.css">
+   RANZAI — CSS SPLIT VERSION
+   Generated from: global (8).css
    ============================================================ */
+
+
+/* NOTE: global.css hanya untuk pondasi umum. Komponen dipanggil dari main.css. */
+
 
 /* ============================================================
    FONTS
@@ -126,7 +129,6 @@ strong { font-weight: 700; }
    ============================================================ */
 .container { max-width: 1200px; margin: 0 auto; padding: 0 60px; }
 .section   { padding: 80px 60px; max-width: 1200px; margin: 0 auto; }
-.page-body { padding-top: 64px; } /* offset for fixed nav */
 
 .flex         { display: flex; }
 .flex-center  { display: flex; align-items: center; justify-content: center; }
@@ -154,131 +156,6 @@ strong { font-weight: 700; }
 .lang-en .id { display: none !important; }
 
 /* ============================================================
-   NAV
-   ============================================================ */
-nav {
-  position: fixed; top: 0; left: 0; right: 0;
-  z-index: var(--z-nav);
-  display: flex; align-items: center; justify-content: space-between;
-  height: 64px; padding: 0 40px;
-  background: var(--surface);
-  border-bottom: 1px solid var(--border);
-}
-.nav-logo {
-  display: flex; align-items: center; gap: 10px;
-  font: 800 18px 'Montserrat', sans-serif; letter-spacing: -.5px;
-  color: var(--ink);
-}
-.logo-mark {
-  width: 32px; height: 32px; border-radius: 8px;
-  overflow: hidden; display: flex; align-items: center; justify-content: center;
-}
-.logo-mark img { width: 100%; height: 100%; object-fit: cover; }
-.nav-links { display: flex; align-items: center; gap: 28px; }
-.nav-links a {
-  font: 500 14px 'Montserrat', sans-serif;
-  color: var(--ink-soft); transition: color var(--ease);
-}
-.nav-links a:hover { color: var(--blue); }
-.nav-right { display: flex; align-items: center; gap: 12px; }
-
-/* dashboard nav extras */
-.nav-user {
-  display: flex; align-items: center; gap: 8px;
-  padding: 5px 10px 5px 5px; border-radius: 999px;
-  border: 1px solid var(--border);
-  font: 600 13px 'Montserrat', sans-serif; color: var(--ink-soft);
-  cursor: pointer; transition: border-color var(--ease), color var(--ease);
-}
-.nav-user:hover { border-color: var(--blue); color: var(--blue); }
-.nav-user-avatar {
-  width: 28px; height: 28px; border-radius: 50%;
-  background: var(--blue-light);
-  display: flex; align-items: center; justify-content: center;
-  font: 700 11px 'Montserrat', sans-serif; color: var(--blue);
-}
-.nav-coins {
-  display: flex; align-items: center; gap: 5px;
-  padding: 6px 12px; border-radius: 999px;
-  background: var(--blue-light);
-  font: 700 13px 'Montserrat', sans-serif; color: var(--blue);
-}
-
-/* ============================================================
-   BUTTONS
-   ============================================================ */
-.btn {
-  display: inline-flex; align-items: center; gap: 8px;
-  padding: 12px 26px; border-radius: var(--r-md);
-  font: 700 14px 'Montserrat', sans-serif;
-  cursor: pointer; border: none; transition: var(--ease);
-}
-.btn-primary {
-  background: var(--accent); color: #fff;
-  box-shadow: var(--shadow-blue);
-}
-.btn-primary:hover { box-shadow: var(--shadow-blue-hover); transform: translateY(-1px); }
-.btn-outline {
-  background: var(--surface); color: var(--ink-soft);
-  border: 1px solid var(--border-strong);
-}
-.btn-outline:hover { border-color: var(--blue); color: var(--blue); }
-.btn-ghost {
-  background: transparent; color: var(--ink-soft); padding: 10px 18px;
-}
-.btn-ghost:hover { color: var(--blue); background: var(--blue-light); }
-.btn-danger { background: var(--danger); color: #fff; }
-.btn-danger:hover { opacity: .88; transform: translateY(-1px); }
-.btn-sm  { padding: 8px 16px; font-size: 12px; border-radius: var(--r-sm); }
-.btn-lg  { padding: 15px 32px; font-size: 15px; }
-.btn:disabled { opacity: .45; pointer-events: none; }
-
-/* ============================================================
-   CARDS
-   ============================================================ */
-.card {
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: var(--r-lg); padding: 28px; transition: var(--ease);
-}
-.card:hover {
-  border-color: var(--border-strong);
-  box-shadow: var(--shadow-hover); transform: translateY(-2px);
-}
-.card-flat {
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: var(--r-lg); padding: 28px;
-}
-.tool-card {
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: var(--r-lg); padding: 24px;
-  display: flex; flex-direction: column; gap: 12px;
-  transition: var(--ease); color: inherit;
-}
-.tool-card:hover {
-  border-color: var(--blue);
-  box-shadow: var(--shadow-hover); transform: translateY(-2px);
-}
-.tool-card-icon {
-  width: 44px; height: 44px; border-radius: var(--r-sm);
-  display: flex; align-items: center; justify-content: center; font-size: 20px;
-}
-
-/* ============================================================
-   BADGE
-   ============================================================ */
-.badge {
-  display: inline-flex; align-items: center; gap: 6px;
-  padding: 5px 14px; border-radius: 999px;
-  font: 700 11px 'Montserrat', sans-serif;
-  letter-spacing: .06em; text-transform: uppercase;
-  color: var(--blue); background: var(--blue-light);
-  border: 1px solid rgba(26, 107, 255, .16);
-}
-.badge-success { color: var(--success); background: rgba(34,197,94,.08); border-color: rgba(34,197,94,.2); }
-.badge-warning { color: var(--warning); background: rgba(245,158,11,.08); border-color: rgba(245,158,11,.2); }
-.badge-danger  { color: var(--danger);  background: rgba(239,68,68,.08);  border-color: rgba(239,68,68,.2); }
-
-/* ============================================================
    SECTION HEADERS
    ============================================================ */
 .eyebrow {
@@ -296,96 +173,6 @@ nav {
   -webkit-text-fill-color: transparent;
 }
 .section-sub { font-size: 15px; color: var(--muted); max-width: 520px; line-height: 1.7; }
-
-/* ============================================================
-   FORMS
-   ============================================================ */
-.form-group { display: flex; flex-direction: column; gap: 6px; }
-.form-label {
-  font: 600 12px 'Montserrat', sans-serif;
-  letter-spacing: .04em; color: var(--ink-soft);
-}
-.form-input, .form-select, .form-textarea {
-  width: 100%; padding: 11px 14px;
-  border: 1px solid var(--border-strong); border-radius: var(--r-sm);
-  background: var(--surface-alt); color: var(--ink);
-  font: 400 14px 'Montserrat', sans-serif;
-  transition: border-color var(--ease), box-shadow var(--ease);
-  outline: none;
-}
-.form-input:focus, .form-select:focus, .form-textarea:focus {
-  border-color: var(--blue);
-  box-shadow: 0 0 0 3px rgba(26, 107, 255, .12);
-}
-.form-input::placeholder, .form-textarea::placeholder { color: var(--muted); }
-.form-textarea { resize: vertical; min-height: 100px; }
-.form-hint  { font-size: 12px; color: var(--muted); }
-.form-error { font-size: 12px; color: var(--danger); }
-
-/* ============================================================
-   MODAL
-   ============================================================ */
-.modal-overlay {
-  position: fixed; inset: 0; z-index: var(--z-modal);
-  background: rgba(13, 31, 60, .45);
-  display: flex; align-items: center; justify-content: center;
-  padding: 20px; opacity: 0; pointer-events: none;
-  transition: opacity var(--ease-out);
-}
-.modal-overlay.open { opacity: 1; pointer-events: all; }
-.modal {
-  background: var(--surface); border-radius: var(--r-xl);
-  padding: 36px; width: 100%; max-width: 480px;
-  box-shadow: var(--shadow-hover);
-  transform: translateY(12px); transition: transform var(--ease-out);
-}
-.modal-overlay.open .modal { transform: translateY(0); }
-.modal-title { font: 800 20px 'Montserrat', sans-serif; color: var(--ink); margin-bottom: 8px; }
-.modal-close {
-  position: absolute; top: 16px; right: 16px;
-  width: 32px; height: 32px; border-radius: 50%;
-  border: none; background: var(--bg); cursor: pointer;
-  display: flex; align-items: center; justify-content: center;
-  color: var(--muted); transition: var(--ease);
-}
-.modal-close:hover { background: var(--border); color: var(--ink); }
-
-/* ============================================================
-   TOAST
-   ============================================================ */
-#toast-container {
-  position: fixed; bottom: 24px; right: 24px;
-  z-index: var(--z-toast); display: flex; flex-direction: column; gap: 8px;
-}
-.toast {
-  display: flex; align-items: center; gap: 10px;
-  padding: 12px 18px; border-radius: var(--r-md);
-  background: var(--ink); color: #fff;
-  font: 600 13px 'Montserrat', sans-serif;
-  box-shadow: var(--shadow-hover);
-  animation: toast-in .22s var(--ease-out) forwards;
-}
-.toast.success { background: var(--success); }
-.toast.error   { background: var(--danger); }
-.toast.warning { background: var(--warning); }
-@keyframes toast-in {
-  from { opacity: 0; transform: translateY(8px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-/* ============================================================
-   LANG TOGGLE
-   ============================================================ */
-.lang-toggle {
-  display: flex; gap: 2px; padding: 3px;
-  border-radius: var(--r-sm); background: var(--bg); border: 1px solid var(--border);
-}
-.lang-toggle button {
-  padding: 5px 12px; border: none; border-radius: 6px;
-  font: 600 12px 'Montserrat', sans-serif; letter-spacing: .04em;
-  color: var(--muted); background: transparent; cursor: pointer; transition: var(--ease);
-}
-.lang-toggle button.active { background: var(--surface); color: var(--blue); box-shadow: var(--shadow); }
 
 /* ============================================================
    DIVIDER
@@ -414,34 +201,6 @@ nav {
 }
 
 /* ============================================================
-   FOOTER
-   ============================================================ */
-footer {
-  border-top: 1px solid var(--border);
-  padding: 32px 40px;
-  display: flex; align-items: center; justify-content: space-between;
-  flex-wrap: wrap; gap: 16px;
-}
-.footer-logo {
-  display: flex; align-items: center; gap: 8px;
-  font: 800 16px 'Montserrat', sans-serif; color: var(--ink);
-}
-.footer-links { display: flex; align-items: center; gap: 20px; }
-.footer-links a { font-size: 13px; color: var(--muted); transition: color var(--ease); }
-.footer-links a:hover { color: var(--blue); }
-.footer-copy { font-size: 12px; color: var(--muted); }
-
-/* ============================================================
-   REVEAL ANIMATION
-   ============================================================ */
-.reveal { opacity: 0; transform: translateY(16px); transition: opacity .5s ease, transform .5s ease; }
-.reveal.visible { opacity: 1; transform: translateY(0); }
-.reveal-delay-1 { transition-delay: .06s; }
-.reveal-delay-2 { transition-delay: .12s; }
-.reveal-delay-3 { transition-delay: .18s; }
-.reveal-delay-4 { transition-delay: .24s; }
-
-/* ============================================================
    SCROLLBAR
    ============================================================ */
 ::-webkit-scrollbar { width: 4px; }
@@ -449,19 +208,29 @@ footer {
 ::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 99px; }
 
 /* ============================================================
-   RESPONSIVE
+   RESPONSIVE — GLOBAL
    ============================================================ */
 @media (max-width: 1024px) {
-  .container, .section { padding-left: 32px; padding-right: 32px; }
-  nav { padding: 0 32px; }
-  footer { padding: 28px 32px; }
+  .container,
+  .section {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
 }
+
 @media (max-width: 640px) {
-  .container, .section { padding-left: 16px; padding-right: 16px; }
-  nav { padding: 0 16px; height: 58px; }
-  .page-body { padding-top: 58px; }
-  .nav-links { display: none; }
-  footer { padding: 20px 16px; flex-direction: column; text-align: center; }
-  .section { padding-top: 56px; padding-bottom: 56px; }
-  .section-title { font-size: clamp(24px, 7vw, 34px); }
+  .container,
+  .section {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .section {
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+
+  .section-title {
+    font-size: clamp(24px, 7vw, 34px);
+  }
 }
