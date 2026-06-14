@@ -1,0 +1,208 @@
+/* ============================================================
+   RANZAI — GLOBAL THEME
+   Single source of truth for all pages.
+   Replaces: home.css + per-page inline <style> overrides.
+
+   Removed for performance: mesh-bg, grid-bg, backdrop-filter,
+   heavy multi-layer shadows. Brand colors (blue/cyan) kept.
+   ============================================================ */
+
+/* ---------- SELF-HOSTED FONTS ---------- */
+@font-face{
+  font-family:'Montserrat';
+  src:url('/assets/font/Montserrat-Light.woff2') format('woff2');
+  font-weight:300;font-style:normal;font-display:swap;
+}
+@font-face{
+  font-family:'Montserrat';
+  src:url('/assets/font/Montserrat-SemiBold.woff2') format('woff2');
+  font-weight:600;font-style:normal;font-display:swap;
+}
+@font-face{
+  font-family:'Montserrat';
+  src:url('/assets/font/Montserrat-ExtraBold.woff2') format('woff2');
+  font-weight:800;font-style:normal;font-display:swap;
+}
+
+/* ---------- RESET ---------- */
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;font-size:16px;}
+img,svg{display:block;max-width:100%;}
+
+/* ---------- DESIGN TOKENS ---------- */
+:root{
+  /* surfaces */
+  --bg:           #f7f9fc;
+  --surface:      #ffffff;
+  --border:       #e6eaf2;
+  --border-strong:#d6deeb;
+
+  /* text */
+  --ink:      #0d1f3c;
+  --ink-soft: #4a5b7c;
+  --muted:    #8a97b5;
+
+  /* brand */
+  --blue:      #1a6bff;
+  --blue-dark: #0e54d6;
+  --cyan:      #00c2b8;
+  --accent:    linear-gradient(135deg, var(--blue), var(--cyan));
+
+  /* radius */
+  --r-lg: 16px;
+  --r-md: 12px;
+  --r-sm: 8px;
+
+  /* shadow — one level, used sparingly (hover/elevation only) */
+  --shadow:       0 2px 12px rgba(13,31,60,.06);
+  --shadow-hover: 0 8px 28px rgba(13,31,60,.10);
+
+  /* motion */
+  --ease: .18s ease;
+}
+
+/* ---------- BASE ---------- */
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:'Montserrat',sans-serif;
+  font-weight:400;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;}
+
+/* ---------- LAYOUT ---------- */
+.container{max-width:1200px;margin:0 auto;padding:0 60px;}
+.section{padding:80px 60px;max-width:1200px;margin:0 auto;}
+
+/* ---------- LANGUAGE TOGGLE ---------- */
+.lang-id .en{display:none!important;}
+.lang-en .id{display:none!important;}
+.lang-toggle{
+  display:flex;gap:2px;padding:3px;border-radius:var(--r-sm);
+  background:var(--bg);border:1px solid var(--border);
+}
+.lang-toggle button{
+  padding:5px 12px;border:none;border-radius:6px;
+  font:600 12px 'Montserrat',sans-serif;letter-spacing:.04em;
+  color:var(--muted);background:transparent;cursor:pointer;
+  transition:var(--ease);
+}
+.lang-toggle button.active{
+  background:var(--surface);color:var(--blue);box-shadow:var(--shadow);
+}
+
+/* ---------- NAV ---------- */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:500;
+  display:flex;align-items:center;justify-content:space-between;
+  height:64px;padding:0 40px;
+  background:var(--surface);
+  border-bottom:1px solid var(--border);
+}
+.nav-logo{
+  display:flex;align-items:center;gap:10px;
+  font:800 18px 'Montserrat',sans-serif;letter-spacing:-.5px;
+  color:var(--ink);text-decoration:none;
+}
+.logo-mark{width:32px;height:32px;border-radius:8px;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+.logo-mark img{width:100%;height:100%;object-fit:cover;}
+.nav-links{display:flex;align-items:center;gap:28px;}
+.nav-links a{
+  font:500 14px 'Montserrat',sans-serif;color:var(--ink-soft);
+  text-decoration:none;transition:color var(--ease);
+}
+.nav-links a:hover{color:var(--blue);}
+.nav-right{display:flex;align-items:center;gap:12px;}
+
+/* ---------- BUTTONS ---------- */
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 26px;border-radius:var(--r-md);
+  font:700 14px 'Montserrat',sans-serif;
+  text-decoration:none;cursor:pointer;border:none;
+  transition:var(--ease);
+}
+.btn-primary{
+  background:var(--accent);color:#fff;
+  box-shadow:0 4px 16px rgba(26,107,255,.22);
+}
+.btn-primary:hover{box-shadow:0 6px 22px rgba(26,107,255,.32);transform:translateY(-1px);}
+.btn-outline{
+  background:var(--surface);color:var(--ink-soft);
+  border:1px solid var(--border-strong);
+}
+.btn-outline:hover{border-color:var(--blue);color:var(--blue);}
+
+/* ---------- CARDS ---------- */
+.card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--r-lg);padding:28px;
+  transition:var(--ease);
+}
+.card:hover{border-color:var(--border-strong);box-shadow:var(--shadow-hover);transform:translateY(-2px);}
+
+/* ---------- BADGE / CHIP ---------- */
+.badge{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:5px 14px;border-radius:999px;
+  font:700 11px 'Montserrat',sans-serif;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--blue);background:rgba(26,107,255,.08);
+  border:1px solid rgba(26,107,255,.16);
+}
+
+/* ---------- SECTION HEADER ---------- */
+.eyebrow{
+  font:700 11px 'Montserrat',sans-serif;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--blue);margin-bottom:12px;
+}
+.section-title{
+  font:800 clamp(28px,4vw,44px)/1.15 'Montserrat',sans-serif;
+  letter-spacing:-.02em;color:var(--ink);margin-bottom:14px;
+}
+.section-title .accent{
+  background:var(--accent);-webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+.section-sub{font-size:15px;color:var(--muted);max-width:520px;line-height:1.7;}
+
+/* ---------- FOOTER ---------- */
+footer{
+  border-top:1px solid var(--border);
+  padding:32px 40px;display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:16px;
+}
+.footer-logo{display:flex;align-items:center;gap:8px;font:800 16px 'Montserrat',sans-serif;color:var(--ink);text-decoration:none;}
+.footer-links{display:flex;align-items:center;gap:20px;}
+.footer-links a{font-size:13px;color:var(--muted);text-decoration:none;}
+.footer-links a:hover{color:var(--blue);}
+.footer-copy{font-size:12px;color:var(--muted);}
+
+/* ---------- REVEAL ANIMATION ---------- */
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.reveal-delay-1{transition-delay:.06s;}
+.reveal-delay-2{transition-delay:.12s;}
+.reveal-delay-3{transition-delay:.18s;}
+.reveal-delay-4{transition-delay:.24s;}
+
+/* ---------- SCROLLBAR ---------- */
+::-webkit-scrollbar{width:4px;}
+::-webkit-scrollbar-track{background:transparent;}
+::-webkit-scrollbar-thumb{background:var(--border-strong);border-radius:99px;}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:1024px){
+  .container,.section{padding-left:32px;padding-right:32px;}
+  nav{padding:0 32px;}
+  footer{padding:28px 32px;}
+}
+@media(max-width:640px){
+  .container,.section{padding-left:16px;padding-right:16px;}
+  nav{padding:0 16px;height:58px;}
+  .nav-links{display:none;}
+  footer{padding:20px 16px;flex-direction:column;text-align:center;}
+  .section{padding-top:56px;padding-bottom:56px;}
+  .section-title{font-size:clamp(24px,7vw,34px);}
+}
