@@ -1,0 +1,51 @@
+{
+  "redirects": [
+    { "source": "/auth/login.html", "destination": "/login", "permanent": true },
+    { "source": "/auth/register.html", "destination": "/register", "permanent": true },
+    { "source": "/auth/reset-password.html", "destination": "/reset-password", "permanent": true },
+    { "source": "/dashboard/index.html", "destination": "/dashboard", "permanent": true }
+  ],
+  "rewrites": [
+    { "source": "/login", "destination": "/auth/login.html" },
+    { "source": "/login/", "destination": "/auth/login.html" },
+
+    { "source": "/register", "destination": "/auth/register.html" },
+    { "source": "/register/", "destination": "/auth/register.html" },
+
+    { "source": "/reset-password", "destination": "/auth/reset-password.html" },
+    { "source": "/reset-password/", "destination": "/auth/reset-password.html" },
+
+    { "source": "/dashboard", "destination": "/dashboard/index.html" },
+    { "source": "/dashboard/", "destination": "/dashboard/index.html" },
+
+    { "source": "/pricing", "destination": "/dashboard/pricing/index.html" },
+    { "source": "/pricing/", "destination": "/dashboard/pricing/index.html" },
+
+    { "source": "/payment", "destination": "/dashboard/pricing/index.html" },
+    { "source": "/payment/", "destination": "/dashboard/pricing/index.html" },
+
+    { "source": "/tools", "destination": "/src/tools/index.html" },
+    { "source": "/tools/", "destination": "/src/tools/index.html" },
+
+    { "source": "/breakdown", "destination": "/tool/breakdown-ranzai/index.html" },
+    { "source": "/breakdown/", "destination": "/tool/breakdown-ranzai/index.html" },
+
+    { "source": "/design", "destination": "/tool/design-ranzai/index.html" },
+    { "source": "/design/", "destination": "/tool/design-ranzai/index.html" },
+
+    { "source": "/write", "destination": "/tool/write-ranzai/index.html" },
+    { "source": "/write/", "destination": "/tool/write-ranzai/index.html" },
+
+    { "source": "/gel", "destination": "/tool/gel-ranzai/index.html" },
+    { "source": "/gel/", "destination": "/tool/gel-ranzai/index.html" },
+
+    { "source": "/cut", "destination": "/tool/cut-ranzai/index.html" },
+    { "source": "/cut/", "destination": "/tool/cut-ranzai/index.html" },
+
+    { "source": "/convert", "destination": "/tool/convert-ranzai/index.html" },
+    { "source": "/convert/", "destination": "/tool/convert-ranzai/index.html" },
+
+    { "source": "/mockup", "destination": "/tool/mockup-ranzai/index.html" },
+    { "source": "/mockup/", "destination": "/tool/mockup-ranzai/index.html" }
+  ]
+}
